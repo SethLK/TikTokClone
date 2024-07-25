@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: {
-    default: "TikTok Clone",
-    template:" %s | TikTok Clone"
-  },
+  title: "Log in",
   description: "TikTok Clone",
 };
 
