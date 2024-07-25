@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     default: "TikTok Clone",
-    template:"TikTok Clone | %s"
+    template:" %s | TikTok Clone"
   },
   description: "TikTok Clone",
 };
