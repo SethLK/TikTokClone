@@ -32,6 +32,14 @@ export class AuthService {
   }
 
   async register(user: UserType) {
+    const { email, username } = user;
+
+    const userExists = await this.usersService.userExists(email, username);
+    if (userExists) {
+      return {
+        message: 'User already exists',
+      };
+    }
     const newUser = await this.usersService.create(user);
     const { password, ...result } = newUser.toObject();
     const token = await this.login(result);
