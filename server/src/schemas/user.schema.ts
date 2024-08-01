@@ -22,12 +22,6 @@ export class User {
 
     @Prop({ default: 0 })
     video_count: number;
-
-    @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post"}]})
-    posts: mongoose.Types.ObjectId[]
-
-    @Prop({ default: 0})
-    post_count: number
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)

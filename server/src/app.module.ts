@@ -4,10 +4,20 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 
 @Module({
-  imports: [MongooseModule.forRoot("mongodb://127.0.0.1:27017/tiktok"), UserModule, AuthModule],
+  imports: [ConfigModule.forRoot(),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) =>({
+        uri: configService.get<string>('MONGO_DB_CONNECTION_STR'),
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+    }), UserModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

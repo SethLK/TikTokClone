@@ -17,9 +17,10 @@ export class UserService {
     constructor (@InjectModel(User.name) private userModel: Model<User>){}
 
     async create(user: UserType): Promise<UserDocument>{
-        const { email, password } = user;
+        const { username, email, password } = user;
         const hashedPassword = await bcrypt.hash(password, 10)
         const newUser = new this.userModel({
+            username,
             email,
             password: hashedPassword,
         })
@@ -31,4 +32,16 @@ export class UserService {
         const user = await this.userModel.findOne({ email }).exec();
         return user;
     }
+
+    async findByUsername(username: string): Promise<UserDocument | undefined >{
+        return this.userModel.findOne({ username }).exec()
+    }
+
+    async userExists(email: string, username: string): Promise<boolean>{
+        const userFindByEmail = await this.findByEmail(email);
+        const userFindByUsername = await this.findByUsername(username);
+        return !!userFindByEmail || !!userFindByUsername;
+    }
+
+
 }
