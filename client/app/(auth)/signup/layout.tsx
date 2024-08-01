@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Log in",
-  description: "Login to TikTok Clone",
+  title: "Sign up",
+  description: "Sign Up to TikTok Clone",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-white">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

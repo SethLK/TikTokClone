@@ -1,11 +1,11 @@
 import Image from "next/image";
-import LoginBox from "../../../components/LoginBox/LoginBox";
+import SignUpBox from "../../../components/SignUpBox/SignUpBox";
 import Link from "next/link";
 
 export default function Login() {
   return (
     <>
-      {/* Header of Login Page */}
+      {/* Header of Sign Up Page */}
       <div className="flex justify-between px-3">
         <Image
           src="/images/tiktok-light.png"
@@ -34,16 +34,16 @@ export default function Login() {
           <span className="text-black ml-2">Feedback and help</span>
         </a>
       </div>
-      {/* Center of Login Page, Login Box */}
-      <LoginBox />
+      {/* Center of Sign Up Page, Auth Box */}
+      <SignUpBox />
       {/* footer 1 */}
       <div className="mt-20">
         <hr></hr>
         <div className="flex justify-center">
           <div className="m-5">
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="text-red-500 font-semibold">
-              Sign Up
+            <Link href="/login" className="text-red-500 font-semibold">
+              Log in
             </Link>
           </div>
         </div>
