@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { VideoModule } from './video/video.module';
 
 
 @Module({
@@ -17,7 +18,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
-    }), UserModule, AuthModule],
+    }), UserModule, AuthModule, VideoModule],
   controllers: [AppController],
   providers: [AppService],
 })
