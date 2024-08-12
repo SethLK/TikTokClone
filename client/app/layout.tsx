@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
+    absolute: "TikTok - Make Your Day",
     default: "TikTok Clone",
     template: "%s | TikTok Clone",
   },

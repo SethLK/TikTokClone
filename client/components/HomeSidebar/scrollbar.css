@@ -1,0 +1,28 @@
+/* Initially hide the scrollbar */
+.HomeSidebar {
+  overflow: hidden; /* Hide scrollbar by default */
+}
+
+/* Show scrollbar on hover */
+.HomeSidebar:hover {
+  overflow-y: auto; /* Show vertical scrollbar on hover */
+}
+
+/* Customize scrollbar */
+.HomeSidebar::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.HomeSidebar::-webkit-scrollbar-track {
+  background: #0a0a0a; /* Track color */
+}
+
+.HomeSidebar::-webkit-scrollbar-thumb {
+  background-color: #262626; /* Thumb color */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #0a0a0a; /* Space around the thumb */
+}
+
+.HomeSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #0a0a0a; /* Thumb color on hover */
+}
