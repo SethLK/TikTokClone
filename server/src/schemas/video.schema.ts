@@ -23,15 +23,23 @@ export class Video {
     @Prop({ type: String, default: "" })
     description: string;
 
+    @Prop({ type: Number, default: 0 })
+    comments_count: number;
+
+    @Prop({ type: [{ type: Types.ObjectId, ref: "Comment" }] })
+    comments: Types.ObjectId[];
+
 }
 
 export const VideoSchema = SchemaFactory.createForClass(Video);
 
 export type VideoType = {
-    _id: string,
-    video_url: string,
-    description: string,
-    likes_count: number,
+    _id: string;
+    video_url: string;
+    description: string;
+    likes_count: number;
     likeByUsers: Types.ObjectId[];
     author: Types.ObjectId;
+    comments_count: number;
+    comments: Types.ObjectId[];
 };
